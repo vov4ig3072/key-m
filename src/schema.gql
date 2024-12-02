@@ -1,0 +1,42 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Booking {
+  id: ID!
+  user: String!
+  date: DateTime!
+  startTime: String!
+  endTime: String!
+}
+
+"""
+A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date-time format.
+"""
+scalar DateTime
+
+type Query {
+  allBookings: [Booking!]!
+  booking(id: ID!): Booking!
+}
+
+type Mutation {
+  createBooking(createBookingInput: CreateBookingInput!): Booking!
+  updateBooking(updateBookingInput: UpdateBookingInput!): Booking!
+  removeBooking(id: ID!): String!
+}
+
+input CreateBookingInput {
+  user: String!
+  date: DateTime!
+  startTime: String!
+  endTime: String!
+}
+
+input UpdateBookingInput {
+  user: String
+  date: DateTime
+  startTime: String
+  endTime: String
+  id: ID!
+}
